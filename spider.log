@@ -1,0 +1,2004 @@
+2024-10-24 15:33:55 [scrapy.utils.log] INFO: Scrapy 2.8.0 started (bot: douban_crawler)
+2024-10-24 15:33:55 [scrapy.utils.log] INFO: Versions: lxml 4.9.3.0, libxml2 2.10.4, cssselect 1.1.0, parsel 1.6.0, w3lib 1.21.0, Twisted 22.10.0, Python 3.11.5 (main, Sep 11 2023, 08:31:25) [Clang 14.0.6 ], pyOpenSSL 23.2.0 (OpenSSL 3.0.14 4 Jun 2024), cryptography 41.0.3, Platform macOS-14.1-arm64-arm-64bit
+2024-10-24 15:33:55 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'douban_crawler',
+ 'DOWNLOAD_DELAY': 1,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'spider.log',
+ 'NEWSPIDER_MODULE': 'douban_crawler.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['douban_crawler.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor',
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+               '(KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36'}
+2024-10-24 15:33:55 [asyncio] DEBUG: Using selector: KqueueSelector
+2024-10-24 15:33:55 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2024-10-24 15:33:55 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2024-10-24 15:33:55 [scrapy.extensions.telnet] INFO: Telnet Password: 95dea62b351debbf
+2024-10-24 15:33:55 [py.warnings] WARNING: /Users/mumu/anaconda3/lib/python3.11/site-packages/scrapy/extensions/feedexport.py:315: ScrapyDeprecationWarning: The `FEED_URI` and `FEED_FORMAT` settings have been deprecated in favor of the `FEEDS` setting. Please see the `FEEDS` setting docs for more details
+  exporter = cls(crawler)
+
+2024-10-24 15:33:55 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats']
+2024-10-24 15:33:55 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-10-24 15:33:55 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-10-24 15:33:55 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2024-10-24 15:33:55 [scrapy.core.engine] INFO: Spider opened
+2024-10-24 15:33:56 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-10-24 15:33:56 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-10-24 15:33:56 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://movie.douban.com/robots.txt> from <GET http://movie.douban.com/robots.txt>
+2024-10-24 15:33:57 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://movie.douban.com/robots.txt> (referer: None)
+2024-10-24 15:33:58 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://movie.douban.com/top250> from <GET http://movie.douban.com/top250>
+2024-10-24 15:34:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://movie.douban.com/top250> (referer: None)
+2024-10-24 15:34:00 [movies] INFO: Processing URL: https://movie.douban.com/top250
+2024-10-24 15:34:00 [movies] INFO: Found 25 movies on the page
+2024-10-24 15:34:00 [scrapy.core.scraper] ERROR: Spider error processing <GET https://movie.douban.com/top250> (referer: None)
+Traceback (most recent call last):
+  File "/Users/mumu/anaconda3/lib/python3.11/site-packages/scrapy/utils/defer.py", line 257, in iter_errback
+    yield next(it)
+          ^^^^^^^^
+  File "/Users/mumu/anaconda3/lib/python3.11/site-packages/scrapy/utils/python.py", line 312, in __next__
+    return next(self.data)
+           ^^^^^^^^^^^^^^^
+  File "/Users/mumu/anaconda3/lib/python3.11/site-packages/scrapy/utils/python.py", line 312, in __next__
+    return next(self.data)
+           ^^^^^^^^^^^^^^^
+  File "/Users/mumu/anaconda3/lib/python3.11/site-packages/scrapy/core/spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "/Users/mumu/anaconda3/lib/python3.11/site-packages/scrapy/spidermiddlewares/offsite.py", line 28, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mumu/anaconda3/lib/python3.11/site-packages/scrapy/core/spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "/Users/mumu/anaconda3/lib/python3.11/site-packages/scrapy/spidermiddlewares/referer.py", line 353, in <genexpr>
+    return (self._set_referer(r, response) for r in result or ())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mumu/anaconda3/lib/python3.11/site-packages/scrapy/core/spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "/Users/mumu/anaconda3/lib/python3.11/site-packages/scrapy/spidermiddlewares/urllength.py", line 27, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mumu/anaconda3/lib/python3.11/site-packages/scrapy/core/spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "/Users/mumu/anaconda3/lib/python3.11/site-packages/scrapy/spidermiddlewares/depth.py", line 31, in <genexpr>
+    return (r for r in result or () if self._filter(r, response, spider))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mumu/anaconda3/lib/python3.11/site-packages/scrapy/core/spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "/Users/mumu/Desktop/douban_crawler/douban_crawler/spiders/movies.py", line 20, in parse
+    item['detail_url'] = movie.xpath('.//div[@class="info"]/div[@class="hd"]/a/@href').extract_first()
+    ~~~~^^^^^^^^^^^^^^
+  File "/Users/mumu/anaconda3/lib/python3.11/site-packages/scrapy/item.py", line 85, in __setitem__
+    raise KeyError(f"{self.__class__.__name__} does not support field: {key}")
+KeyError: 'DoubanCrawlerItem does not support field: detail_url'
+2024-10-24 15:34:00 [scrapy.core.engine] INFO: Closing spider (finished)
+2024-10-24 15:34:00 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1310,
+ 'downloader/request_count': 4,
+ 'downloader/request_method_count/GET': 4,
+ 'downloader/response_bytes': 11546,
+ 'downloader/response_count': 4,
+ 'downloader/response_status_count/200': 2,
+ 'downloader/response_status_count/301': 2,
+ 'elapsed_time_seconds': 4.123439,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2024, 10, 24, 7, 34, 0, 144954),
+ 'httpcompression/response_bytes': 67204,
+ 'httpcompression/response_count': 2,
+ 'log_count/DEBUG': 7,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 12,
+ 'log_count/WARNING': 1,
+ 'memusage/max': 73629696,
+ 'memusage/startup': 73629696,
+ 'response_received_count': 2,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'spider_exceptions/KeyError': 1,
+ 'start_time': datetime.datetime(2024, 10, 24, 7, 33, 56, 21515)}
+2024-10-24 15:34:00 [scrapy.core.engine] INFO: Spider closed (finished)
+2024-10-24 15:35:22 [scrapy.utils.log] INFO: Scrapy 2.8.0 started (bot: douban_crawler)
+2024-10-24 15:35:22 [scrapy.utils.log] INFO: Versions: lxml 4.9.3.0, libxml2 2.10.4, cssselect 1.1.0, parsel 1.6.0, w3lib 1.21.0, Twisted 22.10.0, Python 3.11.5 (main, Sep 11 2023, 08:31:25) [Clang 14.0.6 ], pyOpenSSL 23.2.0 (OpenSSL 3.0.14 4 Jun 2024), cryptography 41.0.3, Platform macOS-14.1-arm64-arm-64bit
+2024-10-24 15:35:22 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'douban_crawler',
+ 'DOWNLOAD_DELAY': 1,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'spider.log',
+ 'NEWSPIDER_MODULE': 'douban_crawler.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['douban_crawler.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor',
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+               '(KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36'}
+2024-10-24 15:35:22 [asyncio] DEBUG: Using selector: KqueueSelector
+2024-10-24 15:35:22 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2024-10-24 15:35:22 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2024-10-24 15:35:22 [scrapy.extensions.telnet] INFO: Telnet Password: 84832902edf69816
+2024-10-24 15:35:22 [py.warnings] WARNING: /Users/mumu/anaconda3/lib/python3.11/site-packages/scrapy/extensions/feedexport.py:315: ScrapyDeprecationWarning: The `FEED_URI` and `FEED_FORMAT` settings have been deprecated in favor of the `FEEDS` setting. Please see the `FEEDS` setting docs for more details
+  exporter = cls(crawler)
+
+2024-10-24 15:35:22 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats']
+2024-10-24 15:35:22 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-10-24 15:35:22 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-10-24 15:35:22 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2024-10-24 15:35:22 [scrapy.core.engine] INFO: Spider opened
+2024-10-24 15:35:22 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-10-24 15:35:22 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-10-24 15:35:22 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://movie.douban.com/robots.txt> from <GET http://movie.douban.com/robots.txt>
+2024-10-24 15:35:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://movie.douban.com/robots.txt> (referer: None)
+2024-10-24 15:35:24 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://movie.douban.com/top250> from <GET http://movie.douban.com/top250>
+2024-10-24 15:35:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://movie.douban.com/top250> (referer: None)
+2024-10-24 15:35:26 [movies] INFO: Processing URL: https://movie.douban.com/top250
+2024-10-24 15:35:26 [movies] INFO: Found 25 movies on the page
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 肖申克的救赎 with rating 9.7 and URL https://movie.douban.com/subject/1292052/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/1292052/',
+ 'director': '弗兰克·德拉邦特 Frank Darabont\xa0\xa0\xa0',
+ 'num_reviews': '3076680人评价',
+ 'rating': '9.7',
+ 'title': '肖申克的救赎'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 霸王别姬 with rating 9.6 and URL https://movie.douban.com/subject/1291546/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/1291546/',
+ 'director': '陈凯歌 Kaige Chen\xa0\xa0\xa0',
+ 'num_reviews': '2271545人评价',
+ 'rating': '9.6',
+ 'title': '霸王别姬'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 阿甘正传 with rating 9.5 and URL https://movie.douban.com/subject/1292720/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/1292720/',
+ 'director': '罗伯特·泽米吉斯 Robert Zemeckis\xa0\xa0\xa0',
+ 'num_reviews': '2290898人评价',
+ 'rating': '9.5',
+ 'title': '阿甘正传'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 泰坦尼克号 with rating 9.5 and URL https://movie.douban.com/subject/1292722/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/1292722/',
+ 'director': '詹姆斯·卡梅隆 James Cameron\xa0\xa0\xa0',
+ 'num_reviews': '2331070人评价',
+ 'rating': '9.5',
+ 'title': '泰坦尼克号'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 千与千寻 with rating 9.4 and URL https://movie.douban.com/subject/1291561/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/1291561/',
+ 'director': '宫崎骏 Hayao Miyazaki\xa0\xa0\xa0',
+ 'num_reviews': '2379629人评价',
+ 'rating': '9.4',
+ 'title': '千与千寻'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 美丽人生 with rating 9.5 and URL https://movie.douban.com/subject/1292063/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/1292063/',
+ 'director': '罗伯托·贝尼尼 Roberto Benigni\xa0\xa0\xa0',
+ 'num_reviews': '1400383人评价',
+ 'rating': '9.5',
+ 'title': '美丽人生'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 这个杀手不太冷 with rating 9.4 and URL https://movie.douban.com/subject/1295644/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/1295644/',
+ 'director': '吕克·贝松 Luc Besson\xa0\xa0\xa0',
+ 'num_reviews': '2411032人评价',
+ 'rating': '9.4',
+ 'title': '这个杀手不太冷'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 星际穿越 with rating 9.4 and URL https://movie.douban.com/subject/1889243/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/1889243/',
+ 'director': '克里斯托弗·诺兰 Christopher Nolan\xa0\xa0\xa0',
+ 'num_reviews': '2002367人评价',
+ 'rating': '9.4',
+ 'title': '星际穿越'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 盗梦空间 with rating 9.4 and URL https://movie.douban.com/subject/3541415/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/3541415/',
+ 'director': '克里斯托弗·诺兰 Christopher Nolan\xa0\xa0\xa0',
+ 'num_reviews': '2191429人评价',
+ 'rating': '9.4',
+ 'title': '盗梦空间'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 楚门的世界 with rating 9.4 and URL https://movie.douban.com/subject/1292064/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/1292064/',
+ 'director': '彼得·威尔 Peter Weir\xa0\xa0\xa0',
+ 'num_reviews': '1859866人评价',
+ 'rating': '9.4',
+ 'title': '楚门的世界'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 辛德勒的名单 with rating 9.5 and URL https://movie.douban.com/subject/1295124/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/1295124/',
+ 'director': '史蒂文·斯皮尔伯格 Steven Spielberg\xa0\xa0\xa0',
+ 'num_reviews': '1184102人评价',
+ 'rating': '9.5',
+ 'title': '辛德勒的名单'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 忠犬八公的故事 with rating 9.4 and URL https://movie.douban.com/subject/3011091/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/3011091/',
+ 'director': '莱塞·霍尔斯道姆 Lasse Hallström\xa0\xa0\xa0',
+ 'num_reviews': '1465846人评价',
+ 'rating': '9.4',
+ 'title': '忠犬八公的故事'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 海上钢琴师 with rating 9.3 and URL https://movie.douban.com/subject/1292001/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/1292001/',
+ 'director': '朱塞佩·托纳多雷 Giuseppe Tornatore\xa0\xa0\xa0',
+ 'num_reviews': '1769049人评价',
+ 'rating': '9.3',
+ 'title': '海上钢琴师'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 三傻大闹宝莱坞 with rating 9.2 and URL https://movie.douban.com/subject/3793023/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/3793023/',
+ 'director': '拉库马·希拉尼 Rajkumar Hirani\xa0\xa0\xa0',
+ 'num_reviews': '1962019人评价',
+ 'rating': '9.2',
+ 'title': '三傻大闹宝莱坞'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 放牛班的春天 with rating 9.3 and URL https://movie.douban.com/subject/1291549/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/1291549/',
+ 'director': '克里斯托夫·巴拉蒂 Christophe Barratier\xa0\xa0\xa0',
+ 'num_reviews': '1391386人评价',
+ 'rating': '9.3',
+ 'title': '放牛班的春天'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 机器人总动员 with rating 9.3 and URL https://movie.douban.com/subject/2131459/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/2131459/',
+ 'director': '安德鲁·斯坦顿 Andrew Stanton\xa0\xa0\xa0',
+ 'num_reviews': '1396439人评价',
+ 'rating': '9.3',
+ 'title': '机器人总动员'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 疯狂动物城 with rating 9.2 and URL https://movie.douban.com/subject/25662329/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/25662329/',
+ 'director': '拜伦·霍华德 Byron Howard / 瑞奇·摩尔 Rich Moore\xa0\xa0\xa0',
+ 'num_reviews': '2088601人评价',
+ 'rating': '9.2',
+ 'title': '疯狂动物城'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 无间道 with rating 9.3 and URL https://movie.douban.com/subject/1307914/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/1307914/',
+ 'director': '刘伟强 / 麦兆辉\xa0\xa0\xa0',
+ 'num_reviews': '1462895人评价',
+ 'rating': '9.3',
+ 'title': '无间道'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 控方证人 with rating 9.6 and URL https://movie.douban.com/subject/1296141/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/1296141/',
+ 'director': '比利·怀尔德 Billy Wilder\xa0\xa0\xa0',
+ 'num_reviews': '636607人评价',
+ 'rating': '9.6',
+ 'title': '控方证人'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 大话西游之大圣娶亲 with rating 9.2 and URL https://movie.douban.com/subject/1292213/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/1292213/',
+ 'director': '刘镇伟 Jeffrey Lau\xa0\xa0\xa0',
+ 'num_reviews': '1617350人评价',
+ 'rating': '9.2',
+ 'title': '大话西游之大圣娶亲'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 熔炉 with rating 9.3 and URL https://movie.douban.com/subject/5912992/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/5912992/',
+ 'director': '黄东赫 Dong-hyuk Hwang\xa0\xa0\xa0',
+ 'num_reviews': '984410人评价',
+ 'rating': '9.3',
+ 'title': '熔炉'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 教父 with rating 9.3 and URL https://movie.douban.com/subject/1291841/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/1291841/',
+ 'director': '弗朗西斯·福特·科波拉 Francis Ford Coppola\xa0\xa0\xa0',
+ 'num_reviews': '1034402人评价',
+ 'rating': '9.3',
+ 'title': '教父'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 触不可及 with rating 9.3 and URL https://movie.douban.com/subject/6786002/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/6786002/',
+ 'director': '奥利维·那卡什 Olivier Nakache / 艾力克·托兰达 Eric Toledano\xa0\xa0\xa0',
+ 'num_reviews': '1204315人评价',
+ 'rating': '9.3',
+ 'title': '触不可及'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 当幸福来敲门 with rating 9.2 and URL https://movie.douban.com/subject/1849031/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/1849031/',
+ 'director': '加布里尔·穆奇诺 Gabriele Muccino\xa0\xa0\xa0',
+ 'num_reviews': '1602487人评价',
+ 'rating': '9.2',
+ 'title': '当幸福来敲门'}
+2024-10-24 15:35:26 [movies] DEBUG: Scraping movie: 寻梦环游记 with rating 9.1 and URL https://movie.douban.com/subject/20495023/
+2024-10-24 15:35:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250>
+{'detail_url': 'https://movie.douban.com/subject/20495023/',
+ 'director': '李·昂克里奇 Lee Unkrich / 阿德里安·莫利纳 Adrian Molina\xa0\xa0\xa0',
+ 'num_reviews': '1815865人评价',
+ 'rating': '9.1',
+ 'title': '寻梦环游记'}
+2024-10-24 15:35:26 [movies] INFO: Following next page: https://movie.douban.com/top250?start=25&filter=
+2024-10-24 15:35:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://movie.douban.com/top250?start=25&filter=> (referer: https://movie.douban.com/top250)
+2024-10-24 15:35:27 [movies] INFO: Processing URL: https://movie.douban.com/top250?start=25&filter=
+2024-10-24 15:35:27 [movies] INFO: Found 25 movies on the page
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 末代皇帝 with rating 9.3 and URL https://movie.douban.com/subject/1293172/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1293172/',
+ 'director': '贝纳尔多·贝托鲁奇 Bernardo Bertolucci\xa0\xa0\xa0',
+ 'num_reviews': '956727人评价',
+ 'rating': '9.3',
+ 'title': '末代皇帝'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 龙猫 with rating 9.2 and URL https://movie.douban.com/subject/1291560/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291560/',
+ 'director': '宫崎骏 Hayao Miyazaki\xa0\xa0\xa0',
+ 'num_reviews': '1338577人评价',
+ 'rating': '9.2',
+ 'title': '龙猫'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 怦然心动 with rating 9.1 and URL https://movie.douban.com/subject/3319755/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/3319755/',
+ 'director': '罗伯·莱纳 Rob Reiner\xa0\xa0\xa0',
+ 'num_reviews': '1939897人评价',
+ 'rating': '9.1',
+ 'title': '怦然心动'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 哈利·波特与魔法石 with rating 9.2 and URL https://movie.douban.com/subject/1295038/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1295038/',
+ 'director': 'Chris Columbus\xa0\xa0\xa0',
+ 'num_reviews': '1302299人评价',
+ 'rating': '9.2',
+ 'title': '哈利·波特与魔法石'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 活着 with rating 9.3 and URL https://movie.douban.com/subject/1292365/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1292365/',
+ 'director': '张艺谋 Yimou Zhang\xa0\xa0\xa0',
+ 'num_reviews': '908967人评价',
+ 'rating': '9.3',
+ 'title': '活着'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 蝙蝠侠：黑暗骑士 with rating 9.2 and URL https://movie.douban.com/subject/1851857/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1851857/',
+ 'director': '克里斯托弗·诺兰 Christopher Nolan\xa0\xa0\xa0',
+ 'num_reviews': '1128206人评价',
+ 'rating': '9.2',
+ 'title': '蝙蝠侠：黑暗骑士'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 指环王3：王者无敌 with rating 9.3 and URL https://movie.douban.com/subject/1291552/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291552/',
+ 'director': '彼得·杰克逊 Peter Jackson\xa0\xa0\xa0',
+ 'num_reviews': '855810人评价',
+ 'rating': '9.3',
+ 'title': '指环王3：王者无敌'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 我不是药神 with rating 9.0 and URL https://movie.douban.com/subject/26752088/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/26752088/',
+ 'director': '文牧野 Muye Wen\xa0\xa0\xa0',
+ 'num_reviews': '2226974人评价',
+ 'rating': '9.0',
+ 'title': '我不是药神'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 乱世佳人 with rating 9.3 and URL https://movie.douban.com/subject/1300267/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1300267/',
+ 'director': '维克多·弗莱明 Victor Fleming / 乔治·库克 George Cukor\xa0\xa0\xa0',
+ 'num_reviews': '737294人评价',
+ 'rating': '9.3',
+ 'title': '乱世佳人'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 飞屋环游记 with rating 9.1 and URL https://movie.douban.com/subject/2129039/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/2129039/',
+ 'director': '彼特·道格特 Pete Docter / 鲍勃·彼德森 Bob Peterson\xa0\xa0\xa0',
+ 'num_reviews': '1408979人评价',
+ 'rating': '9.1',
+ 'title': '飞屋环游记'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 素媛 with rating 9.3 and URL https://movie.douban.com/subject/21937452/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/21937452/',
+ 'director': '李濬益 Jun-ik Lee\xa0\xa0\xa0',
+ 'num_reviews': '732034人评价',
+ 'rating': '9.3',
+ 'title': '素媛'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 哈尔的移动城堡 with rating 9.1 and URL https://movie.douban.com/subject/1308807/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1308807/',
+ 'director': '宫崎骏 Hayao Miyazaki\xa0\xa0\xa0',
+ 'num_reviews': '1181853人评价',
+ 'rating': '9.1',
+ 'title': '哈尔的移动城堡'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 让子弹飞 with rating 9.0 and URL https://movie.douban.com/subject/3742360/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/3742360/',
+ 'director': '姜文 Wen Jiang\xa0\xa0\xa0',
+ 'num_reviews': '1807145人评价',
+ 'rating': '9.0',
+ 'title': '让子弹飞'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 十二怒汉 with rating 9.4 and URL https://movie.douban.com/subject/1293182/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1293182/',
+ 'director': 'Sidney Lumet\xa0\xa0\xa0',
+ 'num_reviews': '534785人评价',
+ 'rating': '9.4',
+ 'title': '十二怒汉'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 何以为家 with rating 9.1 and URL https://movie.douban.com/subject/30170448/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/30170448/',
+ 'director': '娜丁·拉巴基 Nadine Labaki\xa0\xa0\xa0',
+ 'num_reviews': '1107236人评价',
+ 'rating': '9.1',
+ 'title': '何以为家'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 海蒂和爷爷 with rating 9.3 and URL https://movie.douban.com/subject/25958717/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/25958717/',
+ 'director': '阿兰·葛斯彭纳 Alain Gsponer\xa0\xa0\xa0',
+ 'num_reviews': '695950人评价',
+ 'rating': '9.3',
+ 'title': '海蒂和爷爷'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 猫鼠游戏 with rating 9.1 and URL https://movie.douban.com/subject/1305487/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1305487/',
+ 'director': '史蒂文·斯皮尔伯格 Steven Spielberg\xa0\xa0\xa0',
+ 'num_reviews': '1116427人评价',
+ 'rating': '9.1',
+ 'title': '猫鼠游戏'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 摔跤吧！爸爸 with rating 9.0 and URL https://movie.douban.com/subject/26387939/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/26387939/',
+ 'director': '涅提·蒂瓦里 Nitesh Tiwari\xa0\xa0\xa0',
+ 'num_reviews': '1653455人评价',
+ 'rating': '9.0',
+ 'title': '摔跤吧！爸爸'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 天空之城 with rating 9.2 and URL https://movie.douban.com/subject/1291583/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291583/',
+ 'director': '宫崎骏 Hayao Miyazaki\xa0\xa0\xa0',
+ 'num_reviews': '946343人评价',
+ 'rating': '9.2',
+ 'title': '天空之城'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 鬼子来了 with rating 9.3 and URL https://movie.douban.com/subject/1291858/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291858/',
+ 'director': '姜文 Wen Jiang\xa0\xa0\xa0',
+ 'num_reviews': '669415人评价',
+ 'rating': '9.3',
+ 'title': '鬼子来了'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 少年派的奇幻漂流 with rating 9.1 and URL https://movie.douban.com/subject/1929463/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1929463/',
+ 'director': '李安 Ang Lee\xa0\xa0\xa0',
+ 'num_reviews': '1418881人评价',
+ 'rating': '9.1',
+ 'title': '少年派的奇幻漂流'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 钢琴家 with rating 9.3 and URL https://movie.douban.com/subject/1296736/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1296736/',
+ 'director': '罗曼·波兰斯基 Roman Polanski\xa0\xa0\xa0',
+ 'num_reviews': '695528人评价',
+ 'rating': '9.3',
+ 'title': '钢琴家'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 指环王2：双塔奇兵 with rating 9.2 and URL https://movie.douban.com/subject/1291572/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291572/',
+ 'director': '彼得·杰克逊 Peter Jackson\xa0\xa0\xa0',
+ 'num_reviews': '804325人评价',
+ 'rating': '9.2',
+ 'title': '指环王2：双塔奇兵'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 大话西游之月光宝盒 with rating 9.0 and URL https://movie.douban.com/subject/1299398/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1299398/',
+ 'director': '刘镇伟 Jeffrey Lau\xa0\xa0\xa0',
+ 'num_reviews': '1288225人评价',
+ 'rating': '9.0',
+ 'title': '大话西游之月光宝盒'}
+2024-10-24 15:35:27 [movies] DEBUG: Scraping movie: 闻香识女人 with rating 9.1 and URL https://movie.douban.com/subject/1298624/
+2024-10-24 15:35:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=25&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1298624/',
+ 'director': '马丁·布莱斯 Martin Brest\xa0\xa0\xa0',
+ 'num_reviews': '954138人评价',
+ 'rating': '9.1',
+ 'title': '闻香识女人'}
+2024-10-24 15:35:27 [movies] INFO: Following next page: https://movie.douban.com/top250?start=50&filter=
+2024-10-24 15:35:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://movie.douban.com/top250?start=50&filter=> (referer: https://movie.douban.com/top250?start=25&filter=)
+2024-10-24 15:35:28 [movies] INFO: Processing URL: https://movie.douban.com/top250?start=50&filter=
+2024-10-24 15:35:28 [movies] INFO: Found 25 movies on the page
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 死亡诗社 with rating 9.2 and URL https://movie.douban.com/subject/1291548/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291548/',
+ 'director': '彼得·威尔 Peter Weir\xa0\xa0\xa0',
+ 'num_reviews': '800960人评价',
+ 'rating': '9.2',
+ 'title': '死亡诗社'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 绿皮书 with rating 8.9 and URL https://movie.douban.com/subject/27060077/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/27060077/',
+ 'director': '彼得·法雷里 Peter Farrelly\xa0\xa0\xa0',
+ 'num_reviews': '1766391人评价',
+ 'rating': '8.9',
+ 'title': '绿皮书'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 大闹天宫 with rating 9.4 and URL https://movie.douban.com/subject/1418019/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1418019/',
+ 'director': '万籁鸣 Laiming Wan\xa0\xa0\xa0',
+ 'num_reviews': '472966人评价',
+ 'rating': '9.4',
+ 'title': '大闹天宫'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 罗马假日 with rating 9.1 and URL https://movie.douban.com/subject/1293839/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1293839/',
+ 'director': '威廉·惠勒 William Wyler\xa0\xa0\xa0',
+ 'num_reviews': '997586人评价',
+ 'rating': '9.1',
+ 'title': '罗马假日'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 黑客帝国 with rating 9.1 and URL https://movie.douban.com/subject/1291843/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291843/',
+ 'director': '安迪·沃卓斯基 Andy Wachowski / 拉娜·沃卓斯基 Lana Wachowski\xa0\xa0\xa0',
+ 'num_reviews': '890611人评价',
+ 'rating': '9.1',
+ 'title': '黑客帝国'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 指环王1：护戒使者 with rating 9.1 and URL https://movie.douban.com/subject/1291571/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291571/',
+ 'director': '彼得·杰克逊 Peter Jackson\xa0\xa0\xa0',
+ 'num_reviews': '902491人评价',
+ 'rating': '9.1',
+ 'title': '指环王1：护戒使者'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 教父2 with rating 9.3 and URL https://movie.douban.com/subject/1299131/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1299131/',
+ 'director': '弗朗西斯·福特·科波拉 Francis Ford Coppola\xa0\xa0\xa0',
+ 'num_reviews': '594418人评价',
+ 'rating': '9.3',
+ 'title': '教父2'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 天堂电影院 with rating 9.2 and URL https://movie.douban.com/subject/1291828/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291828/',
+ 'director': '朱塞佩·托纳多雷 Giuseppe Tornatore\xa0\xa0\xa0',
+ 'num_reviews': '709955人评价',
+ 'rating': '9.2',
+ 'title': '天堂电影院'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 狮子王 with rating 9.1 and URL https://movie.douban.com/subject/1301753/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1301753/',
+ 'director': 'Roger Allers / 罗伯·明可夫 Rob Minkoff\xa0\xa0\xa0',
+ 'num_reviews': '902555人评价',
+ 'rating': '9.1',
+ 'title': '狮子王'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 辩护人 with rating 9.2 and URL https://movie.douban.com/subject/21937445/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/21937445/',
+ 'director': '杨宇硕 Woo-seok Yang\xa0\xa0\xa0',
+ 'num_reviews': '626182人评价',
+ 'rating': '9.2',
+ 'title': '辩护人'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 饮食男女 with rating 9.2 and URL https://movie.douban.com/subject/1291818/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291818/',
+ 'director': '李安 Ang Lee\xa0\xa0\xa0',
+ 'num_reviews': '668284人评价',
+ 'rating': '9.2',
+ 'title': '饮食男女'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 搏击俱乐部 with rating 9.0 and URL https://movie.douban.com/subject/1292000/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1292000/',
+ 'director': '大卫·芬奇 David Fincher\xa0\xa0\xa0',
+ 'num_reviews': '906393人评价',
+ 'rating': '9.0',
+ 'title': '搏击俱乐部'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 本杰明·巴顿奇事 with rating 9.0 and URL https://movie.douban.com/subject/1485260/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1485260/',
+ 'director': '大卫·芬奇 David Fincher\xa0\xa0\xa0',
+ 'num_reviews': '1045540人评价',
+ 'rating': '9.0',
+ 'title': '本杰明·巴顿奇事'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 美丽心灵 with rating 9.1 and URL https://movie.douban.com/subject/1306029/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1306029/',
+ 'director': '朗·霍华德 Ron Howard\xa0\xa0\xa0',
+ 'num_reviews': '814094人评价',
+ 'rating': '9.1',
+ 'title': '美丽心灵'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 穿条纹睡衣的男孩 with rating 9.2 and URL https://movie.douban.com/subject/3008247/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/3008247/',
+ 'director': '马克·赫尔曼 Mark Herman\xa0\xa0\xa0',
+ 'num_reviews': '606062人评价',
+ 'rating': '9.2',
+ 'title': '穿条纹睡衣的男孩'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 窃听风暴 with rating 9.2 and URL https://movie.douban.com/subject/1900841/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1900841/',
+ 'director': '弗洛里安·亨克尔·冯·多纳斯马尔克 Florian Henckel von Donnersmarck\xa0\xa0&n...',
+ 'num_reviews': '600671人评价',
+ 'rating': '9.2',
+ 'title': '窃听风暴'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 情书 with rating 8.9 and URL https://movie.douban.com/subject/1292220/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1292220/',
+ 'director': '岩井俊二 Shunji Iwai\xa0\xa0\xa0',
+ 'num_reviews': '1202248人评价',
+ 'rating': '8.9',
+ 'title': '情书'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 两杆大烟枪 with rating 9.1 and URL https://movie.douban.com/subject/1293350/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1293350/',
+ 'director': '盖·里奇 Guy Ritchie\xa0\xa0\xa0',
+ 'num_reviews': '635869人评价',
+ 'rating': '9.1',
+ 'title': '两杆大烟枪'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 音乐之声 with rating 9.1 and URL https://movie.douban.com/subject/1294408/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1294408/',
+ 'director': '罗伯特·怀斯 Robert Wise\xa0\xa0\xa0',
+ 'num_reviews': '642917人评价',
+ 'rating': '9.1',
+ 'title': '音乐之声'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 看不见的客人 with rating 8.8 and URL https://movie.douban.com/subject/26580232/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/26580232/',
+ 'director': '奥里奥尔·保罗 Oriol Paulo\xa0\xa0\xa0',
+ 'num_reviews': '1358886人评价',
+ 'rating': '8.8',
+ 'title': '看不见的客人'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 西西里的美丽传说 with rating 8.9 and URL https://movie.douban.com/subject/1292402/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1292402/',
+ 'director': '朱塞佩·托纳多雷 Giuseppe Tornatore\xa0\xa0\xa0',
+ 'num_reviews': '1037142人评价',
+ 'rating': '8.9',
+ 'title': '西西里的美丽传说'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 哈利·波特与死亡圣器(下) with rating 9.0 and URL https://movie.douban.com/subject/3011235/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/3011235/',
+ 'director': '大卫·叶茨 David Yates\xa0\xa0\xa0',
+ 'num_reviews': '894171人评价',
+ 'rating': '9.0',
+ 'title': '哈利·波特与死亡圣器(下)'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 阿凡达 with rating 8.8 and URL https://movie.douban.com/subject/1652587/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1652587/',
+ 'director': '詹姆斯·卡梅隆 James Cameron\xa0\xa0\xa0',
+ 'num_reviews': '1496013人评价',
+ 'rating': '8.8',
+ 'title': '阿凡达'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 拯救大兵瑞恩 with rating 9.1 and URL https://movie.douban.com/subject/1292849/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1292849/',
+ 'director': '史蒂文·斯皮尔伯格 Steven Spielberg\xa0\xa0\xa0',
+ 'num_reviews': '686104人评价',
+ 'rating': '9.1',
+ 'title': '拯救大兵瑞恩'}
+2024-10-24 15:35:28 [movies] DEBUG: Scraping movie: 功夫 with rating 8.9 and URL https://movie.douban.com/subject/1291543/
+2024-10-24 15:35:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=50&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291543/',
+ 'director': '周星驰 Stephen Chow\xa0\xa0\xa0',
+ 'num_reviews': '1233091人评价',
+ 'rating': '8.9',
+ 'title': '功夫'}
+2024-10-24 15:35:28 [movies] INFO: Following next page: https://movie.douban.com/top250?start=75&filter=
+2024-10-24 15:35:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://movie.douban.com/top250?start=75&filter=> (referer: https://movie.douban.com/top250?start=50&filter=)
+2024-10-24 15:35:29 [movies] INFO: Processing URL: https://movie.douban.com/top250?start=75&filter=
+2024-10-24 15:35:29 [movies] INFO: Found 25 movies on the page
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 小鞋子 with rating 9.2 and URL https://movie.douban.com/subject/1303021/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1303021/',
+ 'director': '马基德·马基迪 Majid Majidi\xa0\xa0\xa0',
+ 'num_reviews': '437461人评价',
+ 'rating': '9.2',
+ 'title': '小鞋子'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 飞越疯人院 with rating 9.1 and URL https://movie.douban.com/subject/1292224/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1292224/',
+ 'director': '米洛斯·福尔曼 Miloš Forman\xa0\xa0\xa0',
+ 'num_reviews': '576391人评价',
+ 'rating': '9.1',
+ 'title': '飞越疯人院'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 沉默的羔羊 with rating 8.9 and URL https://movie.douban.com/subject/1293544/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1293544/',
+ 'director': '乔纳森·戴米 Jonathan Demme\xa0\xa0\xa0',
+ 'num_reviews': '954656人评价',
+ 'rating': '8.9',
+ 'title': '沉默的羔羊'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 布达佩斯大饭店 with rating 8.9 and URL https://movie.douban.com/subject/11525673/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/11525673/',
+ 'director': '韦斯·安德森 Wes Anderson\xa0\xa0\xa0',
+ 'num_reviews': '1014116人评价',
+ 'rating': '8.9',
+ 'title': '布达佩斯大饭店'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 哈利·波特与阿兹卡班的囚徒 with rating 9.0 and URL https://movie.douban.com/subject/1291544/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291544/',
+ 'director': 'Alfonso Cuarón\xa0\xa0\xa0',
+ 'num_reviews': '801173人评价',
+ 'rating': '9.0',
+ 'title': '哈利·波特与阿兹卡班的囚徒'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 蝴蝶效应 with rating 8.9 and URL https://movie.douban.com/subject/1292343/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1292343/',
+ 'director': '埃里克·布雷斯 Eric Bress / J·麦基·格鲁伯 J. Mackye Gruber\xa0\xa0\xa0',
+ 'num_reviews': '1002003人评价',
+ 'rating': '8.9',
+ 'title': '蝴蝶效应'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 禁闭岛 with rating 8.9 and URL https://movie.douban.com/subject/2334904/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/2334904/',
+ 'director': 'Martin Scorsese\xa0\xa0\xa0',
+ 'num_reviews': '1046435人评价',
+ 'rating': '8.9',
+ 'title': '禁闭岛'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 致命魔术 with rating 8.9 and URL https://movie.douban.com/subject/1780330/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1780330/',
+ 'director': '克里斯托弗·诺兰 Christopher Nolan\xa0\xa0\xa0',
+ 'num_reviews': '914419人评价',
+ 'rating': '8.9',
+ 'title': '致命魔术'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 心灵捕手 with rating 9.0 and URL https://movie.douban.com/subject/1292656/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1292656/',
+ 'director': '格斯·范·桑特 Gus Van Sant\xa0\xa0\xa0',
+ 'num_reviews': '769874人评价',
+ 'rating': '9.0',
+ 'title': '心灵捕手'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 超脱 with rating 9.0 and URL https://movie.douban.com/subject/5322596/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/5322596/',
+ 'director': '托尼·凯耶 Tony Kaye\xa0\xa0\xa0',
+ 'num_reviews': '666337人评价',
+ 'rating': '9.0',
+ 'title': '超脱'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 低俗小说 with rating 8.9 and URL https://movie.douban.com/subject/1291832/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291832/',
+ 'director': '昆汀·塔伦蒂诺 Quentin Tarantino\xa0\xa0\xa0',
+ 'num_reviews': '897461人评价',
+ 'rating': '8.9',
+ 'title': '低俗小说'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 摩登时代 with rating 9.3 and URL https://movie.douban.com/subject/1294371/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1294371/',
+ 'director': '查理·卓别林 Charles Chaplin\xa0\xa0\xa0',
+ 'num_reviews': '324076人评价',
+ 'rating': '9.3',
+ 'title': '摩登时代'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 喜剧之王 with rating 8.8 and URL https://movie.douban.com/subject/1302425/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1302425/',
+ 'director': '周星驰 Stephen Chow / 李力持 Lik-Chi Lee\xa0\xa0\xa0',
+ 'num_reviews': '1028959人评价',
+ 'rating': '8.8',
+ 'title': '喜剧之王'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 春光乍泄 with rating 9.0 and URL https://movie.douban.com/subject/1292679/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1292679/',
+ 'director': '王家卫 Kar Wai Wong\xa0\xa0\xa0',
+ 'num_reviews': '672153人评价',
+ 'rating': '9.0',
+ 'title': '春光乍泄'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 海豚湾 with rating 9.3 and URL https://movie.douban.com/subject/3442220/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/3442220/',
+ 'director': '路易·西霍尤斯 Louie Psihoyos\xa0\xa0\xa0',
+ 'num_reviews': '370583人评价',
+ 'rating': '9.3',
+ 'title': '海豚湾'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 致命ID with rating 8.9 and URL https://movie.douban.com/subject/1297192/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1297192/',
+ 'director': '詹姆斯·曼高德 James Mangold\xa0\xa0\xa0',
+ 'num_reviews': '887954人评价',
+ 'rating': '8.9',
+ 'title': '致命ID'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 杀人回忆 with rating 8.9 and URL https://movie.douban.com/subject/1300299/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1300299/',
+ 'director': '奉俊昊 Joon-ho Bong\xa0\xa0\xa0',
+ 'num_reviews': '777011人评价',
+ 'rating': '8.9',
+ 'title': '杀人回忆'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 美国往事 with rating 9.1 and URL https://movie.douban.com/subject/1292262/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1292262/',
+ 'director': '赛尔乔·莱翁内 Sergio Leone\xa0\xa0\xa0',
+ 'num_reviews': '443136人评价',
+ 'rating': '9.1',
+ 'title': '美国往事'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 哈利·波特与密室 with rating 8.9 and URL https://movie.douban.com/subject/1296996/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1296996/',
+ 'director': 'Chris Columbus\xa0\xa0\xa0',
+ 'num_reviews': '834826人评价',
+ 'rating': '8.9',
+ 'title': '哈利·波特与密室'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 一一 with rating 9.1 and URL https://movie.douban.com/subject/1292434/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1292434/',
+ 'director': '杨德昌 Edward Yang\xa0\xa0\xa0',
+ 'num_reviews': '444363人评价',
+ 'rating': '9.1',
+ 'title': '一一'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 红辣椒 with rating 9.1 and URL https://movie.douban.com/subject/1865703/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1865703/',
+ 'director': '今敏 Satoshi Kon\xa0\xa0\xa0',
+ 'num_reviews': '519434人评价',
+ 'rating': '9.1',
+ 'title': '红辣椒'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 加勒比海盗 with rating 8.8 and URL https://movie.douban.com/subject/1298070/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1298070/',
+ 'director': '戈尔·维宾斯基 Gore Verbinski\xa0\xa0\xa0',
+ 'num_reviews': '913943人评价',
+ 'rating': '8.8',
+ 'title': '加勒比海盗'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 七宗罪 with rating 8.8 and URL https://movie.douban.com/subject/1292223/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1292223/',
+ 'director': '大卫·芬奇 David Fincher\xa0\xa0\xa0',
+ 'num_reviews': '997774人评价',
+ 'rating': '8.8',
+ 'title': '七宗罪'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 唐伯虎点秋香 with rating 8.7 and URL https://movie.douban.com/subject/1306249/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1306249/',
+ 'director': '李力持 Lik-Chi Lee\xa0\xa0\xa0',
+ 'num_reviews': '1151996人评价',
+ 'rating': '8.7',
+ 'title': '唐伯虎点秋香'}
+2024-10-24 15:35:29 [movies] DEBUG: Scraping movie: 狩猎 with rating 9.1 and URL https://movie.douban.com/subject/6985810/
+2024-10-24 15:35:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=75&filter=>
+{'detail_url': 'https://movie.douban.com/subject/6985810/',
+ 'director': '托马斯·温特伯格 Thomas Vinterberg\xa0\xa0\xa0',
+ 'num_reviews': '428587人评价',
+ 'rating': '9.1',
+ 'title': '狩猎'}
+2024-10-24 15:35:29 [movies] INFO: Following next page: https://movie.douban.com/top250?start=100&filter=
+2024-10-24 15:35:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://movie.douban.com/top250?start=100&filter=> (referer: https://movie.douban.com/top250?start=75&filter=)
+2024-10-24 15:35:30 [movies] INFO: Processing URL: https://movie.douban.com/top250?start=100&filter=
+2024-10-24 15:35:30 [movies] INFO: Found 25 movies on the page
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 7号房的礼物 with rating 8.9 and URL https://movie.douban.com/subject/10777687/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/10777687/',
+ 'director': '李焕庆 Hwan-kyeong Lee\xa0\xa0\xa0',
+ 'num_reviews': '590509人评价',
+ 'rating': '8.9',
+ 'title': '7号房的礼物'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 蝙蝠侠：黑暗骑士崛起 with rating 8.9 and URL https://movie.douban.com/subject/3395373/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/3395373/',
+ 'director': '克里斯托弗·诺兰 Christopher Nolan\xa0\xa0\xa0',
+ 'num_reviews': '768911人评价',
+ 'rating': '8.9',
+ 'title': '蝙蝠侠：黑暗骑士崛起'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 甜蜜蜜 with rating 8.9 and URL https://movie.douban.com/subject/1305164/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1305164/',
+ 'director': '陈可辛 Peter Chan\xa0\xa0\xa0',
+ 'num_reviews': '616733人评价',
+ 'rating': '8.9',
+ 'title': '甜蜜蜜'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 被嫌弃的松子的一生 with rating 8.8 and URL https://movie.douban.com/subject/1787291/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1787291/',
+ 'director': '中岛哲也 Tetsuya Nakashima\xa0\xa0\xa0',
+ 'num_reviews': '740143人评价',
+ 'rating': '8.8',
+ 'title': '被嫌弃的松子的一生'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 爱在黎明破晓前 with rating 8.8 and URL https://movie.douban.com/subject/1296339/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1296339/',
+ 'director': '理查德·林克莱特 Richard Linklater\xa0\xa0\xa0',
+ 'num_reviews': '740878人评价',
+ 'rating': '8.8',
+ 'title': '爱在黎明破晓前'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 超能陆战队 with rating 8.8 and URL https://movie.douban.com/subject/11026735/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/11026735/',
+ 'director': '唐·霍尔 Don Hall / 克里斯·威廉姆斯 Chris Williams\xa0\xa0\xa0',
+ 'num_reviews': '1080922人评价',
+ 'rating': '8.8',
+ 'title': '超能陆战队'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 第六感 with rating 8.9 and URL https://movie.douban.com/subject/1297630/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1297630/',
+ 'director': 'M·奈特·沙马兰 M. Night Shyamalan\xa0\xa0\xa0',
+ 'num_reviews': '596946人评价',
+ 'rating': '8.9',
+ 'title': '第六感'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 寄生虫 with rating 8.8 and URL https://movie.douban.com/subject/27010768/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/27010768/',
+ 'director': '奉俊昊 Joon-ho Bong\xa0\xa0\xa0',
+ 'num_reviews': '1460078人评价',
+ 'rating': '8.8',
+ 'title': '寄生虫'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 重庆森林 with rating 8.8 and URL https://movie.douban.com/subject/1291999/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291999/',
+ 'director': '王家卫 Kar Wai Wong\xa0\xa0\xa0',
+ 'num_reviews': '868208人评价',
+ 'rating': '8.8',
+ 'title': '重庆森林'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 入殓师 with rating 8.9 and URL https://movie.douban.com/subject/2149806/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/2149806/',
+ 'director': '泷田洋二郎 Yôjirô Takita\xa0\xa0\xa0',
+ 'num_reviews': '709184人评价',
+ 'rating': '8.9',
+ 'title': '入殓师'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 请以你的名字呼唤我 with rating 8.8 and URL https://movie.douban.com/subject/26799731/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/26799731/',
+ 'director': '卢卡·瓜达尼诺 Luca Guadagnino\xa0\xa0\xa0',
+ 'num_reviews': '776093人评价',
+ 'rating': '8.8',
+ 'title': '请以你的名字呼唤我'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 爱在日落黄昏时 with rating 8.9 and URL https://movie.douban.com/subject/1291990/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291990/',
+ 'director': '理查德·林克莱特 Richard Linklater\xa0\xa0\xa0',
+ 'num_reviews': '607647人评价',
+ 'rating': '8.9',
+ 'title': '爱在日落黄昏时'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 幽灵公主 with rating 8.9 and URL https://movie.douban.com/subject/1297359/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1297359/',
+ 'director': '宫崎骏 Hayao Miyazaki\xa0\xa0\xa0',
+ 'num_reviews': '560355人评价',
+ 'rating': '8.9',
+ 'title': '幽灵公主'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 剪刀手爱德华 with rating 8.7 and URL https://movie.douban.com/subject/1292370/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1292370/',
+ 'director': '蒂姆·波顿 Tim Burton\xa0\xa0\xa0',
+ 'num_reviews': '1080198人评价',
+ 'rating': '8.7',
+ 'title': '剪刀手爱德华'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 断背山 with rating 8.8 and URL https://movie.douban.com/subject/1418834/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1418834/',
+ 'director': '李安 Ang Lee\xa0\xa0\xa0',
+ 'num_reviews': '743966人评价',
+ 'rating': '8.8',
+ 'title': '断背山'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 勇敢的心 with rating 8.9 and URL https://movie.douban.com/subject/1294639/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1294639/',
+ 'director': '梅尔·吉布森 Mel Gibson\xa0\xa0\xa0',
+ 'num_reviews': '582283人评价',
+ 'rating': '8.9',
+ 'title': '勇敢的心'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 菊次郎的夏天 with rating 8.9 and URL https://movie.douban.com/subject/1293359/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1293359/',
+ 'director': '北野武 Takeshi Kitano\xa0\xa0\xa0',
+ 'num_reviews': '637326人评价',
+ 'rating': '8.9',
+ 'title': '菊次郎的夏天'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 借东西的小人阿莉埃蒂 with rating 8.9 and URL https://movie.douban.com/subject/4202302/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/4202302/',
+ 'director': '米林宏昌 Hiromasa Yonebayashi\xa0\xa0\xa0',
+ 'num_reviews': '592245人评价',
+ 'rating': '8.9',
+ 'title': '借东西的小人阿莉埃蒂'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 未麻的部屋 with rating 9.1 and URL https://movie.douban.com/subject/1395091/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1395091/',
+ 'director': '今敏 Satoshi Kon\xa0\xa0\xa0',
+ 'num_reviews': '385245人评价',
+ 'rating': '9.1',
+ 'title': '未麻的部屋'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 消失的爱人 with rating 8.7 and URL https://movie.douban.com/subject/21318488/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/21318488/',
+ 'director': '大卫·芬奇 David Fincher\xa0\xa0\xa0',
+ 'num_reviews': '1018848人评价',
+ 'rating': '8.7',
+ 'title': '消失的爱人'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 无人知晓 with rating 9.1 and URL https://movie.douban.com/subject/1292337/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1292337/',
+ 'director': '是枝裕和 Hirokazu Koreeda\xa0\xa0\xa0',
+ 'num_reviews': '349163人评价',
+ 'rating': '9.1',
+ 'title': '无人知晓'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 时空恋旅人 with rating 8.8 and URL https://movie.douban.com/subject/10577869/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/10577869/',
+ 'director': '理查德·柯蒂斯 Richard Curtis\xa0\xa0\xa0',
+ 'num_reviews': '732566人评价',
+ 'rating': '8.8',
+ 'title': '时空恋旅人'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 哈利·波特与火焰杯 with rating 8.8 and URL https://movie.douban.com/subject/1309055/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1309055/',
+ 'director': '迈克·内威尔 Mike Newell\xa0\xa0\xa0',
+ 'num_reviews': '723028人评价',
+ 'rating': '8.8',
+ 'title': '哈利·波特与火焰杯'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 倩女幽魂 with rating 8.8 and URL https://movie.douban.com/subject/1297447/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1297447/',
+ 'director': '程小东 Siu-Tung Ching\xa0\xa0\xa0',
+ 'num_reviews': '778835人评价',
+ 'rating': '8.8',
+ 'title': '倩女幽魂'}
+2024-10-24 15:35:30 [movies] DEBUG: Scraping movie: 完美的世界 with rating 9.1 and URL https://movie.douban.com/subject/1300992/
+2024-10-24 15:35:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=100&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1300992/',
+ 'director': '克林特·伊斯特伍德 Clint Eastwood\xa0\xa0\xa0',
+ 'num_reviews': '339026人评价',
+ 'rating': '9.1',
+ 'title': '完美的世界'}
+2024-10-24 15:35:30 [movies] INFO: Following next page: https://movie.douban.com/top250?start=125&filter=
+2024-10-24 15:35:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://movie.douban.com/top250?start=125&filter=> (referer: https://movie.douban.com/top250?start=100&filter=)
+2024-10-24 15:35:31 [movies] INFO: Processing URL: https://movie.douban.com/top250?start=125&filter=
+2024-10-24 15:35:31 [movies] INFO: Found 25 movies on the page
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 阳光灿烂的日子 with rating 8.8 and URL https://movie.douban.com/subject/1291875/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291875/',
+ 'director': '姜文 Wen Jiang\xa0\xa0\xa0',
+ 'num_reviews': '654110人评价',
+ 'rating': '8.8',
+ 'title': '阳光灿烂的日子'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 茶馆 with rating 9.6 and URL https://movie.douban.com/subject/1461403/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1461403/',
+ 'director': '谢添 Tian Xie\xa0\xa0\xa0',
+ 'num_reviews': '177720人评价',
+ 'rating': '9.6',
+ 'title': '茶馆'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 小森林 夏秋篇 with rating 9.0 and URL https://movie.douban.com/subject/25814705/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/25814705/',
+ 'director': '森淳一 Junichi Mori\xa0\xa0\xa0',
+ 'num_reviews': '449998人评价',
+ 'rating': '9.0',
+ 'title': '小森林 夏秋篇'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 天使爱美丽 with rating 8.7 and URL https://movie.douban.com/subject/1292215/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1292215/',
+ 'director': '让-皮埃尔·热内 Jean-Pierre Jeunet\xa0\xa0\xa0',
+ 'num_reviews': '988513人评价',
+ 'rating': '8.7',
+ 'title': '天使爱美丽'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 侧耳倾听 with rating 8.9 and URL https://movie.douban.com/subject/1297052/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1297052/',
+ 'director': '近藤喜文 Yoshifumi Kondo\xa0\xa0\xa0',
+ 'num_reviews': '494720人评价',
+ 'rating': '8.9',
+ 'title': '侧耳倾听'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 驯龙高手 with rating 8.8 and URL https://movie.douban.com/subject/2353023/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/2353023/',
+ 'director': '迪恩·德布洛斯 Dean DeBlois / 克里斯·桑德斯 Chris Sanders\xa0\xa0\xa0',
+ 'num_reviews': '804682人评价',
+ 'rating': '8.8',
+ 'title': '驯龙高手'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 新世界 with rating 8.9 and URL https://movie.douban.com/subject/10437779/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/10437779/',
+ 'director': '朴勋政 Hoon-jung Park\xa0\xa0\xa0',
+ 'num_reviews': '486004人评价',
+ 'rating': '8.9',
+ 'title': '新世界'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 教父3 with rating 9.0 and URL https://movie.douban.com/subject/1294240/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1294240/',
+ 'director': '弗朗西斯·福特·科波拉 Francis Ford Coppola\xa0\xa0\xa0',
+ 'num_reviews': '403305人评价',
+ 'rating': '9.0',
+ 'title': '教父3'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 头脑特工队 with rating 8.8 and URL https://movie.douban.com/subject/10533913/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/10533913/',
+ 'director': '彼特·道格特 Pete Docter / 罗纳尔多·德尔·卡门 Ronaldo Del Carmen\xa0\xa0&nb...',
+ 'num_reviews': '718077人评价',
+ 'rating': '8.8',
+ 'title': '头脑特工队'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 怪兽电力公司 with rating 8.8 and URL https://movie.douban.com/subject/1291579/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291579/',
+ 'director': '彼特·道格特 Pete Docter / 大卫·斯沃曼 David Silverman\xa0\xa0\xa0',
+ 'num_reviews': '723156人评价',
+ 'rating': '8.8',
+ 'title': '怪兽电力公司'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 幸福终点站 with rating 8.8 and URL https://movie.douban.com/subject/1292274/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1292274/',
+ 'director': '史蒂文·斯皮尔伯格 Steven Spielberg\xa0\xa0\xa0',
+ 'num_reviews': '607560人评价',
+ 'rating': '8.8',
+ 'title': '幸福终点站'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 一个叫欧维的男人决定去死 with rating 8.9 and URL https://movie.douban.com/subject/26628357/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/26628357/',
+ 'director': '汉内斯·赫尔姆 Hannes Holm\xa0\xa0\xa0',
+ 'num_reviews': '523844人评价',
+ 'rating': '8.9',
+ 'title': '一个叫欧维的男人决定去死'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 傲慢与偏见 with rating 8.7 and URL https://movie.douban.com/subject/1418200/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1418200/',
+ 'director': '乔·怀特 Joe Wright\xa0\xa0\xa0',
+ 'num_reviews': '861431人评价',
+ 'rating': '8.7',
+ 'title': '傲慢与偏见'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 玩具总动员3 with rating 8.9 and URL https://movie.douban.com/subject/1858711/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1858711/',
+ 'director': '李·昂克里奇 Lee Unkrich\xa0\xa0\xa0',
+ 'num_reviews': '555590人评价',
+ 'rating': '8.9',
+ 'title': '玩具总动员3'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 小森林 冬春篇 with rating 9.0 and URL https://movie.douban.com/subject/25814707/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/25814707/',
+ 'director': '森淳一 Junichi Mori\xa0\xa0\xa0',
+ 'num_reviews': '400118人评价',
+ 'rating': '9.0',
+ 'title': '小森林 冬春篇'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 色，戒 with rating 8.7 and URL https://movie.douban.com/subject/1828115/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1828115/',
+ 'director': '李安 Ang Lee\xa0\xa0\xa0',
+ 'num_reviews': '889399人评价',
+ 'rating': '8.7',
+ 'title': '色，戒'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 被解救的姜戈 with rating 8.8 and URL https://movie.douban.com/subject/6307447/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/6307447/',
+ 'director': '昆汀·塔伦蒂诺 Quentin Tarantino\xa0\xa0\xa0',
+ 'num_reviews': '650554人评价',
+ 'rating': '8.8',
+ 'title': '被解救的姜戈'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 釜山行 with rating 8.6 and URL https://movie.douban.com/subject/25986180/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/25986180/',
+ 'director': '延尚昊 Sang-ho Yeon\xa0\xa0\xa0',
+ 'num_reviews': '1275184人评价',
+ 'rating': '8.6',
+ 'title': '釜山行'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 神偷奶爸 with rating 8.7 and URL https://movie.douban.com/subject/3287562/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/3287562/',
+ 'director': '皮艾尔·柯芬 Pierre Coffin / 克里斯·雷纳德 Chris Renaud\xa0\xa0\xa0',
+ 'num_reviews': '999292人评价',
+ 'rating': '8.7',
+ 'title': '神偷奶爸'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 萤火之森 with rating 8.8 and URL https://movie.douban.com/subject/5989818/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/5989818/',
+ 'director': '大森贵弘 Takahiro Omori\xa0\xa0\xa0',
+ 'num_reviews': '576374人评价',
+ 'rating': '8.8',
+ 'title': '萤火之森'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 九品芝麻官 with rating 8.7 and URL https://movie.douban.com/subject/1297518/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1297518/',
+ 'director': '王晶 Jing Wong\xa0\xa0\xa0',
+ 'num_reviews': '738013人评价',
+ 'rating': '8.7',
+ 'title': '九品芝麻官'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 哪吒闹海 with rating 9.2 and URL https://movie.douban.com/subject/1307315/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1307315/',
+ 'director': '王树忱 Shuchen Wang / 严定宪 Dingxian Yan\xa0\xa0\xa0',
+ 'num_reviews': '278765人评价',
+ 'rating': '9.2',
+ 'title': '哪吒闹海'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 告白 with rating 8.8 and URL https://movie.douban.com/subject/4268598/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/4268598/',
+ 'director': '中岛哲也 Tetsuya Nakashima\xa0\xa0\xa0',
+ 'num_reviews': '706851人评价',
+ 'rating': '8.8',
+ 'title': '告白'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 喜宴 with rating 9.0 and URL https://movie.douban.com/subject/1303037/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1303037/',
+ 'director': '李安 Ang Lee\xa0\xa0\xa0',
+ 'num_reviews': '396318人评价',
+ 'rating': '9.0',
+ 'title': '喜宴'}
+2024-10-24 15:35:31 [movies] DEBUG: Scraping movie: 玛丽和马克思 with rating 9.0 and URL https://movie.douban.com/subject/3072124/
+2024-10-24 15:35:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=125&filter=>
+{'detail_url': 'https://movie.douban.com/subject/3072124/',
+ 'director': '亚当·艾略特 Adam Elliot\xa0\xa0\xa0',
+ 'num_reviews': '439104人评价',
+ 'rating': '9.0',
+ 'title': '玛丽和马克思'}
+2024-10-24 15:35:31 [movies] INFO: Following next page: https://movie.douban.com/top250?start=150&filter=
+2024-10-24 15:35:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://movie.douban.com/top250?start=150&filter=> (referer: https://movie.douban.com/top250?start=125&filter=)
+2024-10-24 15:35:33 [movies] INFO: Processing URL: https://movie.douban.com/top250?start=150&filter=
+2024-10-24 15:35:33 [movies] INFO: Found 25 movies on the page
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 模仿游戏 with rating 8.8 and URL https://movie.douban.com/subject/10463953/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/10463953/',
+ 'director': '莫滕·泰杜姆 Morten Tyldum\xa0\xa0\xa0',
+ 'num_reviews': '687892人评价',
+ 'rating': '8.8',
+ 'title': '模仿游戏'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 花样年华 with rating 8.8 and URL https://movie.douban.com/subject/1291557/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291557/',
+ 'director': '王家卫 Kar Wai Wong\xa0\xa0\xa0',
+ 'num_reviews': '659619人评价',
+ 'rating': '8.8',
+ 'title': '花样年华'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 头号玩家 with rating 8.6 and URL https://movie.douban.com/subject/4920389/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/4920389/',
+ 'director': '史蒂文·斯皮尔伯格 Steven Spielberg\xa0\xa0\xa0',
+ 'num_reviews': '1440659人评价',
+ 'rating': '8.6',
+ 'title': '头号玩家'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 大鱼 with rating 8.8 and URL https://movie.douban.com/subject/1291545/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291545/',
+ 'director': '蒂姆·波顿 Tim Burton\xa0\xa0\xa0',
+ 'num_reviews': '598346人评价',
+ 'rating': '8.8',
+ 'title': '大鱼'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 射雕英雄传之东成西就 with rating 8.7 and URL https://movie.douban.com/subject/1316510/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1316510/',
+ 'director': '刘镇伟 Jeffrey Lau\xa0\xa0\xa0',
+ 'num_reviews': '678823人评价',
+ 'rating': '8.7',
+ 'title': '射雕英雄传之东成西就'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 七武士 with rating 9.3 and URL https://movie.douban.com/subject/1295399/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1295399/',
+ 'director': '黑泽明 Akira Kurosawa\xa0\xa0\xa0',
+ 'num_reviews': '214334人评价',
+ 'rating': '9.3',
+ 'title': '七武士'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 惊魂记 with rating 9.0 and URL https://movie.douban.com/subject/1293181/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1293181/',
+ 'director': '阿尔弗雷德·希区柯克 Alfred Hitchcock\xa0\xa0\xa0',
+ 'num_reviews': '326598人评价',
+ 'rating': '9.0',
+ 'title': '惊魂记'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 我是山姆 with rating 9.0 and URL https://movie.douban.com/subject/1306861/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1306861/',
+ 'director': '杰茜·尼尔森 Jessie Nelson\xa0\xa0\xa0',
+ 'num_reviews': '357968人评价',
+ 'rating': '9.0',
+ 'title': '我是山姆'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 血战钢锯岭 with rating 8.7 and URL https://movie.douban.com/subject/26325320/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/26325320/',
+ 'director': '梅尔·吉布森 Mel Gibson\xa0\xa0\xa0',
+ 'num_reviews': '820569人评价',
+ 'rating': '8.7',
+ 'title': '血战钢锯岭'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 阳光姐妹淘 with rating 8.8 and URL https://movie.douban.com/subject/4917726/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/4917726/',
+ 'director': '姜炯哲 Hyeong-Cheol Kang\xa0\xa0\xa0',
+ 'num_reviews': '613176人评价',
+ 'rating': '8.8',
+ 'title': '阳光姐妹淘'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 恐怖直播 with rating 8.7 and URL https://movie.douban.com/subject/21360417/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/21360417/',
+ 'director': '金秉祐 Byeong-woo Kim\xa0\xa0\xa0',
+ 'num_reviews': '693304人评价',
+ 'rating': '8.7',
+ 'title': '恐怖直播'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 你的名字。 with rating 8.5 and URL https://movie.douban.com/subject/26683290/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/26683290/',
+ 'director': '新海诚 Makoto Shinkai\xa0\xa0\xa0',
+ 'num_reviews': '1509425人评价',
+ 'rating': '8.5',
+ 'title': '你的名字。'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 黑客帝国3：矩阵革命 with rating 8.8 and URL https://movie.douban.com/subject/1302467/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1302467/',
+ 'director': '拉娜·沃卓斯基 Lana Wachowski / 莉莉·沃卓斯基 Lilly Wachowski\xa0\xa0\xa0...',
+ 'num_reviews': '472376人评价',
+ 'rating': '8.8',
+ 'title': '黑客帝国3：矩阵革命'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 三块广告牌 with rating 8.7 and URL https://movie.douban.com/subject/26611804/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/26611804/',
+ 'director': '马丁·麦克唐纳 Martin McDonagh\xa0\xa0\xa0',
+ 'num_reviews': '872190人评价',
+ 'rating': '8.7',
+ 'title': '三块广告牌'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 心迷宫 with rating 8.8 and URL https://movie.douban.com/subject/25917973/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/25917973/',
+ 'director': '忻钰坤 Yukun Xin\xa0\xa0\xa0',
+ 'num_reviews': '571834人评价',
+ 'rating': '8.8',
+ 'title': '心迷宫'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 电锯惊魂 with rating 8.7 and URL https://movie.douban.com/subject/1417598/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1417598/',
+ 'director': '詹姆斯·温 James Wan\xa0\xa0\xa0',
+ 'num_reviews': '574001人评价',
+ 'rating': '8.7',
+ 'title': '电锯惊魂'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 达拉斯买家俱乐部 with rating 8.8 and URL https://movie.douban.com/subject/1793929/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1793929/',
+ 'director': '让-马克·瓦雷 Jean-Marc Vallée\xa0\xa0\xa0',
+ 'num_reviews': '480634人评价',
+ 'rating': '8.8',
+ 'title': '达拉斯买家俱乐部'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 小丑 with rating 8.7 and URL https://movie.douban.com/subject/27119724/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/27119724/',
+ 'director': '托德·菲利普斯 Todd Phillips\xa0\xa0\xa0',
+ 'num_reviews': '1074612人评价',
+ 'rating': '8.7',
+ 'title': '小丑'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 疯狂原始人 with rating 8.7 and URL https://movie.douban.com/subject/1907966/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1907966/',
+ 'director': '科克·德·米科 Kirk De Micco / 克里斯·桑德斯 Chris Sanders\xa0\xa0\xa0',
+ 'num_reviews': '881503人评价',
+ 'rating': '8.7',
+ 'title': '疯狂原始人'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 谍影重重3 with rating 8.8 and URL https://movie.douban.com/subject/1578507/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1578507/',
+ 'director': '保罗·格林格拉斯 Paul Greengrass\xa0\xa0\xa0',
+ 'num_reviews': '443950人评价',
+ 'rating': '8.8',
+ 'title': '谍影重重3'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 心灵奇旅 with rating 8.7 and URL https://movie.douban.com/subject/24733428/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/24733428/',
+ 'director': '彼特·道格特 Pete Docter / 凯普·鲍尔斯 Kemp Powers\xa0\xa0\xa0',
+ 'num_reviews': '1059915人评价',
+ 'rating': '8.7',
+ 'title': '心灵奇旅'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 背靠背，脸对脸 with rating 9.5 and URL https://movie.douban.com/subject/1307856/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1307856/',
+ 'director': '黄建新 Jianxin Huang / 杨亚洲 Yazhou Yang\xa0\xa0\xa0',
+ 'num_reviews': '156515人评价',
+ 'rating': '9.5',
+ 'title': '背靠背，脸对脸'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 上帝之城 with rating 9.0 and URL https://movie.douban.com/subject/1292208/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1292208/',
+ 'director': '费尔南多·梅里尔斯 Fernando Meirelles / 卡迪亚·兰德 Kátia Lund\xa0\xa0\xa0...',
+ 'num_reviews': '317765人评价',
+ 'rating': '9.0',
+ 'title': '上帝之城'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 绿里奇迹 with rating 8.9 and URL https://movie.douban.com/subject/1300374/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1300374/',
+ 'director': '弗兰克·德拉邦特 Frank Darabont\xa0\xa0\xa0',
+ 'num_reviews': '360914人评价',
+ 'rating': '8.9',
+ 'title': '绿里奇迹'}
+2024-10-24 15:35:33 [movies] DEBUG: Scraping movie: 爱在午夜降临前 with rating 8.9 and URL https://movie.douban.com/subject/10808442/
+2024-10-24 15:35:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=150&filter=>
+{'detail_url': 'https://movie.douban.com/subject/10808442/',
+ 'director': '理查德·林克莱特 Richard Linklater\xa0\xa0\xa0',
+ 'num_reviews': '438508人评价',
+ 'rating': '8.9',
+ 'title': '爱在午夜降临前'}
+2024-10-24 15:35:33 [movies] INFO: Following next page: https://movie.douban.com/top250?start=175&filter=
+2024-10-24 15:35:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://movie.douban.com/top250?start=175&filter=> (referer: https://movie.douban.com/top250?start=150&filter=)
+2024-10-24 15:35:34 [movies] INFO: Processing URL: https://movie.douban.com/top250?start=175&filter=
+2024-10-24 15:35:34 [movies] INFO: Found 25 movies on the page
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 海街日记 with rating 8.8 and URL https://movie.douban.com/subject/25895901/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/25895901/',
+ 'director': '是枝裕和 Hirokazu Koreeda\xa0\xa0\xa0',
+ 'num_reviews': '486268人评价',
+ 'rating': '8.8',
+ 'title': '海街日记'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 英雄本色 with rating 8.6 and URL https://movie.douban.com/subject/1297574/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1297574/',
+ 'director': '吴宇森 John Woo\xa0\xa0\xa0',
+ 'num_reviews': '574717人评价',
+ 'rating': '8.6',
+ 'title': '英雄本色'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 风之谷 with rating 8.9 and URL https://movie.douban.com/subject/1291585/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291585/',
+ 'director': '宫崎骏 Hayao Miyazaki\xa0\xa0\xa0',
+ 'num_reviews': '375208人评价',
+ 'rating': '8.9',
+ 'title': '风之谷'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 无间道2 with rating 8.8 and URL https://movie.douban.com/subject/1307106/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1307106/',
+ 'director': '刘伟强 / 麦兆辉\xa0\xa0\xa0',
+ 'num_reviews': '524988人评价',
+ 'rating': '8.8',
+ 'title': '无间道2'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 疯狂的石头 with rating 8.6 and URL https://movie.douban.com/subject/1862151/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1862151/',
+ 'director': '宁浩 Hao Ning\xa0\xa0\xa0',
+ 'num_reviews': '876401人评价',
+ 'rating': '8.6',
+ 'title': '疯狂的石头'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 纵横四海 with rating 8.8 and URL https://movie.douban.com/subject/1295409/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1295409/',
+ 'director': '吴宇森 John Woo\xa0\xa0\xa0',
+ 'num_reviews': '451914人评价',
+ 'rating': '8.8',
+ 'title': '纵横四海'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 2001太空漫游 with rating 8.9 and URL https://movie.douban.com/subject/1292226/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1292226/',
+ 'director': '斯坦利·库布里克 Stanley Kubrick\xa0\xa0\xa0',
+ 'num_reviews': '363573人评价',
+ 'rating': '8.9',
+ 'title': '2001太空漫游'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 雨中曲 with rating 9.1 and URL https://movie.douban.com/subject/1293460/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1293460/',
+ 'director': '斯坦利·多南 Stanley Donen / 吉恩·凯利 Gene Kelly\xa0\xa0\xa0',
+ 'num_reviews': '247296人评价',
+ 'rating': '9.1',
+ 'title': '雨中曲'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 卢旺达饭店 with rating 8.9 and URL https://movie.douban.com/subject/1291822/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291822/',
+ 'director': '特瑞·乔治 Terry George\xa0\xa0\xa0',
+ 'num_reviews': '350012人评价',
+ 'rating': '8.9',
+ 'title': '卢旺达饭店'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 记忆碎片 with rating 8.7 and URL https://movie.douban.com/subject/1304447/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1304447/',
+ 'director': '克里斯托弗·诺兰 Christopher Nolan\xa0\xa0\xa0',
+ 'num_reviews': '637762人评价',
+ 'rating': '8.7',
+ 'title': '记忆碎片'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 小偷家族 with rating 8.7 and URL https://movie.douban.com/subject/27622447/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/27622447/',
+ 'director': '是枝裕和 Hirokazu Koreeda\xa0\xa0\xa0',
+ 'num_reviews': '858169人评价',
+ 'rating': '8.7',
+ 'title': '小偷家族'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 无敌破坏王 with rating 8.7 and URL https://movie.douban.com/subject/6534248/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/6534248/',
+ 'director': '瑞奇·莫尔 Rich Moore\xa0\xa0\xa0',
+ 'num_reviews': '578114人评价',
+ 'rating': '8.7',
+ 'title': '无敌破坏王'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 岁月神偷 with rating 8.7 and URL https://movie.douban.com/subject/3792799/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/3792799/',
+ 'director': '罗启锐 Alex Law\xa0\xa0\xa0',
+ 'num_reviews': '594933人评价',
+ 'rating': '8.7',
+ 'title': '岁月神偷'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 冰川时代 with rating 8.6 and URL https://movie.douban.com/subject/1291578/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291578/',
+ 'director': '卡洛斯·沙尔丹哈 Carlos Saldanha / 克里斯·韦奇 Chris Wedge\xa0\xa0\xa0',
+ 'num_reviews': '652397人评价',
+ 'rating': '8.6',
+ 'title': '冰川时代'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 荒蛮故事 with rating 8.8 and URL https://movie.douban.com/subject/24750126/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/24750126/',
+ 'director': '达米安·斯兹弗隆 Damián Szifron\xa0\xa0\xa0',
+ 'num_reviews': '470961人评价',
+ 'rating': '8.8',
+ 'title': '荒蛮故事'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 牯岭街少年杀人事件 with rating 8.9 and URL https://movie.douban.com/subject/1292329/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1292329/',
+ 'director': '杨德昌 Edward Yang\xa0\xa0\xa0',
+ 'num_reviews': '335277人评价',
+ 'rating': '8.9',
+ 'title': '牯岭街少年杀人事件'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 忠犬八公物语 with rating 9.2 and URL https://movie.douban.com/subject/1959195/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1959195/',
+ 'director': '神山征二郎 Seijirô Kôyama\xa0\xa0\xa0',
+ 'num_reviews': '207571人评价',
+ 'rating': '9.2',
+ 'title': '忠犬八公物语'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 恐怖游轮 with rating 8.5 and URL https://movie.douban.com/subject/3011051/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/3011051/',
+ 'director': '克里斯托弗·史密斯 Christopher Smith\xa0\xa0\xa0',
+ 'num_reviews': '930423人评价',
+ 'rating': '8.5',
+ 'title': '恐怖游轮'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 爆裂鼓手 with rating 8.7 and URL https://movie.douban.com/subject/25773932/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/25773932/',
+ 'director': '达米恩·查泽雷 Damien Chazelle\xa0\xa0\xa0',
+ 'num_reviews': '628842人评价',
+ 'rating': '8.7',
+ 'title': '爆裂鼓手'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 东京教父 with rating 9.0 and URL https://movie.douban.com/subject/1310177/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1310177/',
+ 'director': '今敏 Satoshi Kon\xa0\xa0\xa0',
+ 'num_reviews': '260115人评价',
+ 'rating': '9.0',
+ 'title': '东京教父'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 魔女宅急便 with rating 8.7 and URL https://movie.douban.com/subject/1307811/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1307811/',
+ 'director': '宫崎骏 Hayao Miyazaki\xa0\xa0\xa0',
+ 'num_reviews': '494073人评价',
+ 'rating': '8.7',
+ 'title': '魔女宅急便'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 大佛普拉斯 with rating 8.7 and URL https://movie.douban.com/subject/27059130/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/27059130/',
+ 'director': '黄信尧 Hsin-yao Huang\xa0\xa0\xa0',
+ 'num_reviews': '512133人评价',
+ 'rating': '8.7',
+ 'title': '大佛普拉斯'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 末路狂花 with rating 9.0 and URL https://movie.douban.com/subject/1291992/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291992/',
+ 'director': '雷德利·斯科特 Ridley Scott\xa0\xa0\xa0',
+ 'num_reviews': '299579人评价',
+ 'rating': '9.0',
+ 'title': '末路狂花'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 遗愿清单 with rating 8.7 and URL https://movie.douban.com/subject/1867345/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1867345/',
+ 'director': '罗伯·莱纳 Rob Reiner\xa0\xa0\xa0',
+ 'num_reviews': '500332人评价',
+ 'rating': '8.7',
+ 'title': '遗愿清单'}
+2024-10-24 15:35:34 [movies] DEBUG: Scraping movie: 贫民窟的百万富翁 with rating 8.6 and URL https://movie.douban.com/subject/2209573/
+2024-10-24 15:35:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=175&filter=>
+{'detail_url': 'https://movie.douban.com/subject/2209573/',
+ 'director': '丹尼·鲍尔 Danny Boyle / 洛芙琳·坦丹 Loveleen Tandan\xa0\xa0\xa0',
+ 'num_reviews': '778951人评价',
+ 'rating': '8.6',
+ 'title': '贫民窟的百万富翁'}
+2024-10-24 15:35:34 [movies] INFO: Following next page: https://movie.douban.com/top250?start=200&filter=
+2024-10-24 15:35:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://movie.douban.com/top250?start=200&filter=> (referer: https://movie.douban.com/top250?start=175&filter=)
+2024-10-24 15:35:35 [movies] INFO: Processing URL: https://movie.douban.com/top250?start=200&filter=
+2024-10-24 15:35:35 [movies] INFO: Found 25 movies on the page
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 东邪西毒 with rating 8.6 and URL https://movie.douban.com/subject/1292328/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1292328/',
+ 'director': '王家卫 Kar Wai Wong\xa0\xa0\xa0',
+ 'num_reviews': '605717人评价',
+ 'rating': '8.6',
+ 'title': '东邪西毒'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 你看起来好像很好吃 with rating 8.9 and URL https://movie.douban.com/subject/4848115/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/4848115/',
+ 'director': '藤森雅也 Masaya Fujimori\xa0\xa0\xa0',
+ 'num_reviews': '353523人评价',
+ 'rating': '8.9',
+ 'title': '你看起来好像很好吃'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 源代码 with rating 8.5 and URL https://movie.douban.com/subject/3075287/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/3075287/',
+ 'director': '邓肯·琼斯 Duncan Jones\xa0\xa0\xa0',
+ 'num_reviews': '881118人评价',
+ 'rating': '8.5',
+ 'title': '源代码'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 可可西里 with rating 8.9 and URL https://movie.douban.com/subject/1308857/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1308857/',
+ 'director': '陆川 Chuan Lu\xa0\xa0\xa0',
+ 'num_reviews': '324737人评价',
+ 'rating': '8.9',
+ 'title': '可可西里'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 疯狂的麦克斯4：狂暴之路 with rating 8.7 and URL https://movie.douban.com/subject/3592854/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/3592854/',
+ 'director': '乔治·米勒 George Miller\xa0\xa0\xa0',
+ 'num_reviews': '583104人评价',
+ 'rating': '8.7',
+ 'title': '疯狂的麦克斯4：狂暴之路'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 城市之光 with rating 9.3 and URL https://movie.douban.com/subject/1293908/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1293908/',
+ 'director': 'Charles Chaplin\xa0\xa0\xa0',
+ 'num_reviews': '159500人评价',
+ 'rating': '9.3',
+ 'title': '城市之光'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 海边的曼彻斯特 with rating 8.6 and URL https://movie.douban.com/subject/25980443/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/25980443/',
+ 'director': '肯尼斯·罗纳根 Kenneth Lonergan\xa0\xa0\xa0',
+ 'num_reviews': '600739人评价',
+ 'rating': '8.6',
+ 'title': '海边的曼彻斯特'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 高山下的花环 with rating 9.5 and URL https://movie.douban.com/subject/1422283/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1422283/',
+ 'director': '谢晋 Jin Xie\xa0\xa0\xa0',
+ 'num_reviews': '122884人评价',
+ 'rating': '9.5',
+ 'title': '高山下的花环'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 黑天鹅 with rating 8.6 and URL https://movie.douban.com/subject/1978709/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1978709/',
+ 'director': '达伦·阿罗诺夫斯基 Darren Aronofsky\xa0\xa0\xa0',
+ 'num_reviews': '813979人评价',
+ 'rating': '8.6',
+ 'title': '黑天鹅'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 波西米亚狂想曲 with rating 8.6 and URL https://movie.douban.com/subject/5300054/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/5300054/',
+ 'director': '布莱恩·辛格 Bryan Singer\xa0\xa0\xa0',
+ 'num_reviews': '651044人评价',
+ 'rating': '8.6',
+ 'title': '波西米亚狂想曲'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 芙蓉镇 with rating 9.3 and URL https://movie.douban.com/subject/1297880/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1297880/',
+ 'director': '谢晋 Jin Xie\xa0\xa0\xa0',
+ 'num_reviews': '163515人评价',
+ 'rating': '9.3',
+ 'title': '芙蓉镇'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 真爱至上 with rating 8.5 and URL https://movie.douban.com/subject/1292401/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1292401/',
+ 'director': '理查德·柯蒂斯 Richard Curtis\xa0\xa0\xa0',
+ 'num_reviews': '770717人评价',
+ 'rating': '8.5',
+ 'title': '真爱至上'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 爱乐之城 with rating 8.4 and URL https://movie.douban.com/subject/25934014/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/25934014/',
+ 'director': '达米恩·查泽雷 Damien Chazelle\xa0\xa0\xa0',
+ 'num_reviews': '1017524人评价',
+ 'rating': '8.4',
+ 'title': '爱乐之城'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 青蛇 with rating 8.6 and URL https://movie.douban.com/subject/1303394/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1303394/',
+ 'director': '徐克 Hark Tsui\xa0\xa0\xa0',
+ 'num_reviews': '559035人评价',
+ 'rating': '8.6',
+ 'title': '青蛇'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 雨人 with rating 8.7 and URL https://movie.douban.com/subject/1291870/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291870/',
+ 'director': '巴瑞·莱文森 Barry Levinson\xa0\xa0\xa0',
+ 'num_reviews': '424779人评价',
+ 'rating': '8.7',
+ 'title': '雨人'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 初恋这件小事 with rating 8.5 and URL https://movie.douban.com/subject/4739952/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/4739952/',
+ 'director': '普特鹏·普罗萨卡·那·萨克那卡林 Puttipong Promsaka Na Sakolnakorn / 华森·波克彭...',
+ 'num_reviews': '1016610人评价',
+ 'rating': '8.5',
+ 'title': '初恋这件小事'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 终结者2：审判日 with rating 8.8 and URL https://movie.douban.com/subject/1291844/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291844/',
+ 'director': '詹姆斯·卡梅隆 James Cameron\xa0\xa0\xa0',
+ 'num_reviews': '362286人评价',
+ 'rating': '8.8',
+ 'title': '终结者2：审判日'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 花束般的恋爱 with rating 8.6 and URL https://movie.douban.com/subject/34874432/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/34874432/',
+ 'director': '土井裕泰 Nobuhiro Doi\xa0\xa0\xa0',
+ 'num_reviews': '725122人评价',
+ 'rating': '8.6',
+ 'title': '花束般的恋爱'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 人工智能 with rating 8.7 and URL https://movie.douban.com/subject/1302827/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1302827/',
+ 'director': '史蒂文·斯皮尔伯格 Steven Spielberg\xa0\xa0\xa0',
+ 'num_reviews': '475116人评价',
+ 'rating': '8.7',
+ 'title': '人工智能'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 虎口脱险 with rating 8.9 and URL https://movie.douban.com/subject/1296909/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1296909/',
+ 'director': '杰拉尔·乌里 Gérard Oury\xa0\xa0\xa0',
+ 'num_reviews': '276704人评价',
+ 'rating': '8.9',
+ 'title': '虎口脱险'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 无耻混蛋 with rating 8.7 and URL https://movie.douban.com/subject/1438652/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1438652/',
+ 'director': '昆汀·塔伦蒂诺 Quentin Tarantino\xa0\xa0\xa0',
+ 'num_reviews': '516332人评价',
+ 'rating': '8.7',
+ 'title': '无耻混蛋'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 恋恋笔记本 with rating 8.5 and URL https://movie.douban.com/subject/1309163/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1309163/',
+ 'director': '尼克·卡索维茨 Nick Cassavetes\xa0\xa0\xa0',
+ 'num_reviews': '713355人评价',
+ 'rating': '8.5',
+ 'title': '恋恋笔记本'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 新龙门客栈 with rating 8.7 and URL https://movie.douban.com/subject/1292287/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1292287/',
+ 'director': '李惠民 Raymond Lee\xa0\xa0\xa0',
+ 'num_reviews': '474821人评价',
+ 'rating': '8.7',
+ 'title': '新龙门客栈'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 罗生门 with rating 8.8 and URL https://movie.douban.com/subject/1291879/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1291879/',
+ 'director': '黑泽明 Akira Kurosawa\xa0\xa0\xa0',
+ 'num_reviews': '336879人评价',
+ 'rating': '8.8',
+ 'title': '罗生门'}
+2024-10-24 15:35:35 [movies] DEBUG: Scraping movie: 崖上的波妞 with rating 8.6 and URL https://movie.douban.com/subject/1959877/
+2024-10-24 15:35:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=200&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1959877/',
+ 'director': '宫崎骏 Hayao Miyazaki\xa0\xa0\xa0',
+ 'num_reviews': '537609人评价',
+ 'rating': '8.6',
+ 'title': '崖上的波妞'}
+2024-10-24 15:35:35 [movies] INFO: Following next page: https://movie.douban.com/top250?start=225&filter=
+2024-10-24 15:35:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://movie.douban.com/top250?start=225&filter=> (referer: https://movie.douban.com/top250?start=200&filter=)
+2024-10-24 15:35:36 [movies] INFO: Processing URL: https://movie.douban.com/top250?start=225&filter=
+2024-10-24 15:35:36 [movies] INFO: Found 25 movies on the page
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 白日梦想家 with rating 8.6 and URL https://movie.douban.com/subject/2133323/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/2133323/',
+ 'director': '本·斯蒂勒 Ben Stiller\xa0\xa0\xa0',
+ 'num_reviews': '568388人评价',
+ 'rating': '8.6',
+ 'title': '白日梦想家'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 哈利·波特与死亡圣器(上) with rating 8.6 and URL https://movie.douban.com/subject/2051007/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/2051007/',
+ 'director': '大卫·叶茨 David Yates\xa0\xa0\xa0',
+ 'num_reviews': '630424人评价',
+ 'rating': '8.6',
+ 'title': '哈利·波特与死亡圣器(上)'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 千钧一发 with rating 8.8 and URL https://movie.douban.com/subject/1300117/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1300117/',
+ 'director': '安德鲁·尼科尔 Andrew Niccol\xa0\xa0\xa0',
+ 'num_reviews': '324784人评价',
+ 'rating': '8.8',
+ 'title': '千钧一发'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 彗星来的那一夜 with rating 8.6 and URL https://movie.douban.com/subject/25807345/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/25807345/',
+ 'director': '詹姆斯·沃德·布柯特 James Ward Byrkit\xa0\xa0\xa0',
+ 'num_reviews': '634981人评价',
+ 'rating': '8.6',
+ 'title': '彗星来的那一夜'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 萤火虫之墓 with rating 8.7 and URL https://movie.douban.com/subject/1293318/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1293318/',
+ 'director': '高畑勋 Isao Takahata\xa0\xa0\xa0',
+ 'num_reviews': '422686人评价',
+ 'rating': '8.7',
+ 'title': '萤火虫之墓'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 黑客帝国2：重装上阵 with rating 8.7 and URL https://movie.douban.com/subject/1304141/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1304141/',
+ 'director': '拉娜·沃卓斯基 Lana Wachowski / 莉莉·沃卓斯基 Lilly Wachowski\xa0\xa0\xa0...',
+ 'num_reviews': '430708人评价',
+ 'rating': '8.7',
+ 'title': '黑客帝国2：重装上阵'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 大红灯笼高高挂 with rating 8.8 and URL https://movie.douban.com/subject/1293323/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1293323/',
+ 'director': '张艺谋 Yimou Zhang\xa0\xa0\xa0',
+ 'num_reviews': '324977人评价',
+ 'rating': '8.8',
+ 'title': '大红灯笼高高挂'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 火星救援 with rating 8.5 and URL https://movie.douban.com/subject/25864085/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/25864085/',
+ 'director': '雷德利·斯科特 Ridley Scott\xa0\xa0\xa0',
+ 'num_reviews': '783630人评价',
+ 'rating': '8.5',
+ 'title': '火星救援'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 奇迹男孩 with rating 8.6 and URL https://movie.douban.com/subject/26787574/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/26787574/',
+ 'director': '斯蒂芬·卓博斯基 Stephen Chbosky\xa0\xa0\xa0',
+ 'num_reviews': '576873人评价',
+ 'rating': '8.6',
+ 'title': '奇迹男孩'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 二十二 with rating 8.7 and URL https://movie.douban.com/subject/26430107/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/26430107/',
+ 'director': '郭柯 Ke Guo\xa0\xa0\xa0',
+ 'num_reviews': '303710人评价',
+ 'rating': '8.7',
+ 'title': '二十二'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 哈利·波特与凤凰社 with rating 8.5 and URL https://movie.douban.com/subject/1457217/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1457217/',
+ 'director': '大卫·叶茨 David Yates\xa0\xa0\xa0',
+ 'num_reviews': '626725人评价',
+ 'rating': '8.5',
+ 'title': '哈利·波特与凤凰社'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 战争之王 with rating 8.7 and URL https://movie.douban.com/subject/1419936/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1419936/',
+ 'director': '安德鲁·尼科尔 Andrew Niccol\xa0\xa0\xa0',
+ 'num_reviews': '393014人评价',
+ 'rating': '8.7',
+ 'title': '战争之王'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 血钻 with rating 8.7 and URL https://movie.douban.com/subject/1428175/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1428175/',
+ 'director': '爱德华·兹威克 Edward Zwick\xa0\xa0\xa0',
+ 'num_reviews': '402542人评价',
+ 'rating': '8.7',
+ 'title': '血钻'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 步履不停 with rating 8.8 and URL https://movie.douban.com/subject/2222996/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/2222996/',
+ 'director': '是枝裕和 Hirokazu Koreeda\xa0\xa0\xa0',
+ 'num_reviews': '301790人评价',
+ 'rating': '8.8',
+ 'title': '步履不停'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 千年女优 with rating 8.8 and URL https://movie.douban.com/subject/1307394/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1307394/',
+ 'director': '今敏 Satoshi Kon\xa0\xa0\xa0',
+ 'num_reviews': '295092人评价',
+ 'rating': '8.8',
+ 'title': '千年女优'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 谍影重重2 with rating 8.7 and URL https://movie.douban.com/subject/1308767/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1308767/',
+ 'director': '保罗·格林格拉斯 Paul Greengrass\xa0\xa0\xa0',
+ 'num_reviews': '375574人评价',
+ 'rating': '8.7',
+ 'title': '谍影重重2'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 房间 with rating 8.8 and URL https://movie.douban.com/subject/25724855/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/25724855/',
+ 'director': '伦尼·阿伯拉罕森 Lenny Abrahamson\xa0\xa0\xa0',
+ 'num_reviews': '385565人评价',
+ 'rating': '8.8',
+ 'title': '房间'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 魂断蓝桥 with rating 8.8 and URL https://movie.douban.com/subject/1293964/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1293964/',
+ 'director': '茂文·勒鲁瓦 Mervyn LeRoy\xa0\xa0\xa0',
+ 'num_reviews': '295309人评价',
+ 'rating': '8.8',
+ 'title': '魂断蓝桥'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 蜘蛛侠：平行宇宙 with rating 8.6 and URL https://movie.douban.com/subject/26374197/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/26374197/',
+ 'director': '鲍勃·佩尔西凯蒂 Bob Persichetti / 彼得·拉姆齐 Peter Ramsey\xa0\xa0\xa0',
+ 'num_reviews': '714467人评价',
+ 'rating': '8.6',
+ 'title': '蜘蛛侠：平行宇宙'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 弱点 with rating 8.7 and URL https://movie.douban.com/subject/3552028/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/3552028/',
+ 'director': '约翰·李·汉考克 John Lee Hancock\xa0\xa0\xa0',
+ 'num_reviews': '335275人评价',
+ 'rating': '8.7',
+ 'title': '弱点'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 谍影重重 with rating 8.6 and URL https://movie.douban.com/subject/1304102/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1304102/',
+ 'director': '道格·里曼 Doug Liman\xa0\xa0\xa0',
+ 'num_reviews': '456999人评价',
+ 'rating': '8.6',
+ 'title': '谍影重重'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 朗读者 with rating 8.6 and URL https://movie.douban.com/subject/2213597/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/2213597/',
+ 'director': '史蒂芬·戴德利 Stephen Daldry\xa0\xa0\xa0',
+ 'num_reviews': '472228人评价',
+ 'rating': '8.6',
+ 'title': '朗读者'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 隐藏人物 with rating 8.9 and URL https://movie.douban.com/subject/26615208/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/26615208/',
+ 'director': '特奥多尔·梅尔菲 Theodore Melfi\xa0\xa0\xa0',
+ 'num_reviews': '242833人评价',
+ 'rating': '8.9',
+ 'title': '隐藏人物'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 阿飞正传 with rating 8.5 and URL https://movie.douban.com/subject/1305690/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/1305690/',
+ 'director': '王家卫 Kar Wai Wong\xa0\xa0\xa0',
+ 'num_reviews': '542283人评价',
+ 'rating': '8.5',
+ 'title': '阿飞正传'}
+2024-10-24 15:35:36 [movies] DEBUG: Scraping movie: 冰雪奇缘 with rating 8.5 and URL https://movie.douban.com/subject/4202982/
+2024-10-24 15:35:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://movie.douban.com/top250?start=225&filter=>
+{'detail_url': 'https://movie.douban.com/subject/4202982/',
+ 'director': '克里斯·巴克 Chris Buck / 珍妮弗·李 Jennifer Lee\xa0\xa0\xa0',
+ 'num_reviews': '751913人评价',
+ 'rating': '8.5',
+ 'title': '冰雪奇缘'}
+2024-10-24 15:35:36 [movies] INFO: No more pages to follow.
+2024-10-24 15:35:36 [scrapy.core.engine] INFO: Closing spider (finished)
+2024-10-24 15:35:36 [scrapy.extensions.feedexport] INFO: Stored json feed (250 items) in: output.json
+2024-10-24 15:35:36 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 5030,
+ 'downloader/request_count': 13,
+ 'downloader/request_method_count/GET': 13,
+ 'downloader/response_bytes': 102673,
+ 'downloader/response_count': 13,
+ 'downloader/response_status_count/200': 11,
+ 'downloader/response_status_count/301': 2,
+ 'elapsed_time_seconds': 14.496635,
+ 'feedexport/success_count/FileFeedStorage': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2024, 10, 24, 7, 35, 36, 885131),
+ 'httpcompression/response_bytes': 658958,
+ 'httpcompression/response_count': 11,
+ 'item_scraped_count': 250,
+ 'log_count/DEBUG': 516,
+ 'log_count/INFO': 41,
+ 'log_count/WARNING': 1,
+ 'memusage/max': 71434240,
+ 'memusage/startup': 71434240,
+ 'request_depth_max': 9,
+ 'response_received_count': 11,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 11,
+ 'scheduler/dequeued/memory': 11,
+ 'scheduler/enqueued': 11,
+ 'scheduler/enqueued/memory': 11,
+ 'start_time': datetime.datetime(2024, 10, 24, 7, 35, 22, 388496)}
+2024-10-24 15:35:36 [scrapy.core.engine] INFO: Spider closed (finished)
